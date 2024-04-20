@@ -4,9 +4,9 @@ generator client {
 }
 
 datasource db {
-  provider     = "mysql"
+  provider     = "postgresql"
   url          = env("DATABASE_URL")
-  relationMode = "prisma"
+
 }
 
 model Course {
@@ -26,7 +26,6 @@ model Course {
   purchases   Purchase[]
 
   @@index([categoryId])
-  @@fulltext([title])
 }
 
 model Category {
